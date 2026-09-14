@@ -43,14 +43,11 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-
     const parsed = schema.safeParse(body);
 
     if (!parsed.success) {
       return NextResponse.json(
-        {
-          error: parsed.error.flatten(),
-        },
+        { error: parsed.error.flatten() },
         { status: 400 }
       );
     }

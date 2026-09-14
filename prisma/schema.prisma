@@ -13,8 +13,13 @@ model Job {
   webhookUrl String
   schedule   String?
   status     String   @default("active")
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+
+  method     String   @default("GET")
+  retryLimit Int      @default(2)
+  timeoutMs  Int      @default(10000)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   executions Execution[]
 }
@@ -23,6 +28,7 @@ model Execution {
   id          String    @id @default(cuid())
   jobId       String
   status      String
+  attempt     Int       @default(0)
   startedAt   DateTime  @default(now())
   completedAt DateTime?
   output      String?
