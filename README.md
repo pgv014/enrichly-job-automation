@@ -34,3 +34,4 @@ To test a failure, create a job pointing to `https://httpbin.org/status/500`. Th
 
 ## Deployment
 Provision PostgreSQL, set `DATABASE_URL` in the hosting provider, run `npx prisma migrate deploy` during deployment, and deploy as a standard Next.js application
+.
