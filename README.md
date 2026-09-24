@@ -33,4 +33,4 @@ To test a failure, create a job pointing to `https://httpbin.org/status/500`. Th
 - `DATABASE_URL`: PostgreSQL connection string.
 
 ## Deployment
-Provision PostgreSQL, set `DATABASE_URL` in the hosting provider, run `npx prisma migrate deploy` during deployment, and deploy as a standard Next.js application.
+Provision PostgreSQL, set `DATABASE_URL` in the hosting provider, run `npx prisma migrate deploy` during deployment, and deploy as a standard Next.js application
